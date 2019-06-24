@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
 import { Observable, Subject, BehaviorSubject } from 'rxjs';
 
 import { Command } from '../models';
@@ -48,9 +49,7 @@ export class CommandService {
           execute: function(obj) {
             obj.focusedWindow = 1;
             obj.focusSidenav = true;
-            let e = document.querySelector("#sidenav a") as HTMLElement;
-            e.focus();
-            document.querySelector("#Help").scrollIntoView();
+            obj.router.navigate(['/'], {fragment: "Help"});
           }
         },
         {
@@ -64,9 +63,7 @@ export class CommandService {
               execute: function(obj) {
                 obj.focusedWindow = 2;
                 obj.focusSidenav = false;
-                let e = document.querySelector("#main-content a") as HTMLElement;
-                e.focus();
-                document.querySelector("#About").scrollIntoView();
+                obj.router.navigate(['/'], {fragment: "About"});
               }
             },
             {
@@ -76,9 +73,7 @@ export class CommandService {
               execute: function(obj) {
                 obj.focusedWindow = 2;
                 obj.focusSidenav = false;
-                let e = document.querySelector("#main-content a") as HTMLElement;
-                e.focus();
-                document.querySelector("#Experience").scrollIntoView();
+                obj.router.navigate(['/'], {fragment: "Experience"});
               }
             },
             {
@@ -88,9 +83,7 @@ export class CommandService {
               execute: function(obj) {
                 obj.focusedWindow = 2;
                 obj.focusSidenav = false;
-                let e = document.querySelector("#main-content a") as HTMLElement;
-                e.focus();
-                document.querySelector("#Skills").scrollIntoView();
+                obj.router.navigate(['/'], {fragment: "Skills"});
               }
             },
             {
@@ -100,9 +93,7 @@ export class CommandService {
               execute: function(obj) {
                 obj.focusedWindow = 2;
                 obj.focusSidenav = false;
-                let e = document.querySelector("#main-content a") as HTMLElement;
-                e.focus();
-                document.querySelector("#Projects").scrollIntoView();
+                obj.router.navigate(['/'], {fragment: "Projects"});
               }
             },
             {
@@ -112,9 +103,7 @@ export class CommandService {
               execute: function(obj) {
                 obj.focusedWindow = 2;
                 obj.focusSidenav = false;
-                let e = document.querySelector("#main-content a") as HTMLElement;
-                e.focus();
-                document.querySelector("#Awards").scrollIntoView();
+                obj.router.navigate(['/'], {fragment: "Awards"});
               }
             },
             {
@@ -124,9 +113,7 @@ export class CommandService {
               execute: function(obj) {
                 obj.focusedWindow = 2;
                 obj.focusSidenav = false;
-                let e = document.querySelector("#main-content a") as HTMLElement;
-                e.focus();
-                document.querySelector("#Education").scrollIntoView();
+                obj.router.navigate(['/'], {fragment: "Education"});
               }
             },
             {
@@ -136,9 +123,7 @@ export class CommandService {
               execute: function(obj) {
                 obj.focusedWindow = 2;
                 obj.focusSidenav = false;
-                let e = document.querySelector("#main-content a") as HTMLElement;
-                e.focus();
-                document.querySelector("#Research").scrollIntoView();
+                obj.router.navigate(['/'], {fragment: "Research"});
               }
             },
             {
@@ -148,9 +133,8 @@ export class CommandService {
               execute: function(obj) {
                 obj.focusedWindow = 2;
                 obj.focusSidenav = false;
-                let e = document.querySelector("#main-content a") as HTMLElement;
-                e.focus();
-                document.querySelector("#Contact").scrollIntoView();
+                console.log(obj.router);
+                obj.router.navigate(['/'], {fragment: "Contact"});
               }
             }
           ]
@@ -211,7 +195,9 @@ export class CommandService {
   private commandLineMessage = new Subject<string>();
   public commandLineMessage$ = this.commandLineMessage.asObservable();
 
-  constructor() { }
+  constructor() {
+
+  }
 
   executeCommand(cmd:Command, clicked:boolean=false):void {
     if(clicked) { // command executed through a mouse click

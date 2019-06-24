@@ -4,7 +4,7 @@ export class Command {
   public children?:Command[];
   public text:string;
   public textAfterExecute?:string;
-  public execute?:(obj:any) => void;
+  public execute?:any;
 
   constructor(values:any = {}) {
     Object.assign(this, values);

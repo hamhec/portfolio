@@ -1,8 +1,8 @@
 import { Component, HostListener, OnInit, OnDestroy, ViewChild, ElementRef,
-         AfterViewInit,  AfterViewChecked } from '@angular/core';
+         AfterViewInit } from '@angular/core';
 import {BreakpointObserver, Breakpoints} from '@angular/cdk/layout';
 
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 import { Subscription } from 'rxjs';
 
@@ -13,7 +13,7 @@ import { CommandService } from './services';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements OnInit, OnDestroy, AfterViewInit, AfterViewChecked {
+export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
   @ViewChild('window1', {read: ElementRef, static:false}) private window1: ElementRef;
   @ViewChild('window2', {read: ElementRef, static: false}) private window2: ElementRef;
 
@@ -26,12 +26,28 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit, AfterView
     themes : ['solarized-theme', 'doom-one-theme'],
     theme : 'solarized-theme',
     hideSidenav: false,
-    focusSidenav: false
+    focusSidenav: false,
+    router: null
   }
 
   constructor(private commandService:CommandService,
               breakpointObserver:BreakpointObserver,
-              private route:ActivatedRoute) {
+              private route:ActivatedRoute, router:Router) {
+
+    this.representation.router = router;
+
+    this.subscriptions.push(this.route.fragment.subscribe(fragment => {
+      try {
+        document.querySelector('#' + fragment).scrollIntoView();
+      } catch (e) {
+        setTimeout(() => {
+          let e = document.querySelector('#' + fragment);
+          if(e) e.scrollIntoView();
+        }, 500);
+
+      }
+    }));
+
     this.subscriptions.push(breakpointObserver.observe(
       ['(max-width: 775px)']).subscribe(result => {
         if(result.matches) {
@@ -90,16 +106,6 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit, AfterView
   ngAfterViewInit() {
     let e = document.querySelector("#main-content") as HTMLElement;
     e.focus();
-
-  }
-
-  ngAfterViewChecked() {
-    let sub = this.route.fragment.subscribe(fragment => {
-      try {
-        document.querySelector('#' + fragment).scrollIntoView();
-      } catch (e) { }
-    });
-    sub.unsubscribe();
   }
 
   scrollWindow(up:boolean = false) {
