@@ -28,7 +28,7 @@ export class CommandService {
             obj.focusedWindow = 1;
             obj.focusSidenav = true;
             let e = document.querySelector("#sidenav a") as HTMLElement;
-            e.focus();
+            e.focus({ preventScroll: true });
           }
         },
         {
@@ -39,7 +39,7 @@ export class CommandService {
             obj.focusedWindow = 2;
             obj.focusSidenav = false;
             let e = document.querySelector("#main-content a") as HTMLElement;
-            e.focus();
+            e.focus({ preventScroll: true });
           }
         },
         {
