@@ -1,0 +1,80 @@
+@import '../theme-variables.scss';
+
+.main-container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  .wrapper {
+    flex-grow:1;
+    display: flex;
+    flex-direction:row;
+    #main-content {
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      &:focus {
+        outline: none;
+      }
+      .router {
+        height: calc(100vh - #{$powerline-height} - #{$outputline-height});
+        overflow-y: scroll;
+        scroll-behavior: smooth;
+        scrollbar-width: none; /* Firefox */
+        -ms-overflow-style: none;  /* IE 10+ */
+        &::-webkit-scrollbar { /* WebKit */
+          width: 0;
+          height: 0;
+        }
+      }
+    }
+    #sidenav {
+      display: flex;
+      flex-direction: column;
+      &.hideSidenav {
+        display: none;
+        &.focusSidenav {
+          display: flex;
+          position: absolute;
+          top: 0px;
+          left:0px;
+        }
+      }
+      sm-side-nav{
+        width: 310px;
+        text-align: center;
+        overflow-y: scroll;
+        scroll-behavior: smooth;
+        scrollbar-width: none; /* Firefox */
+        -ms-overflow-style: none;  /* IE 10+ */
+        &::-webkit-scrollbar { /* WebKit */
+          width: 0;
+          height: 0;
+        }
+        height: calc(100vh - #{$powerline-height} - #{$outputline-height} - 0px);
+      }
+
+    }
+  }
+}
+
+
+@mixin style($theme) {
+&.main-container {
+  color: map-get($theme, fg);
+  background-color: map-get($theme, bg);
+  background-image: map-get($theme, bg-image);
+  background-repeat: repeat;
+  #sidenav {
+    background-color: map-get($theme, bg);
+    border-right: 1px solid map-get($theme, border);
+    font-size: 16px;
+    line-height: 32px;
+  }
+}
+}
+
+@each $theme in $themes {
+.#{map-get($theme,name)} {
+  @include style($theme)
+}
+}

@@ -1,0 +1,170 @@
+@import '../../../theme-variables.scss';
+
+@mixin style($theme) {
+.container {
+  padding: 4px;
+  padding-top: 30px;
+  text-align: center;
+  .section {
+    padding: 10px 0px;
+    display: flex;
+    flex-direction: column;
+  }
+  .greeting {
+    .logo {
+      display:none;
+      @media(max-width: 775px) {
+        display: inline;
+        width: 200px;
+        border-radius: 50%;
+      }
+    }
+    h1 {
+      margin-top: 0px;
+      letter-spacing: 7px;
+      font-weight: 400;
+      font-variant: small-caps;
+      span {
+        color: map-get($theme, link);
+        font-weight: 600;
+      }
+    }
+  }
+  .block {
+    margin: auto;
+    max-width: 880px;
+    width: 95%;
+    // Large devices (desktops, 992px and up)
+    @media (min-width: 992px) {
+      width: 90%;
+    }
+
+    /* // Extra large devices (large desktops, 1200px and up) */
+    /* @media (min-width: 1200px) { */
+    /*   width: 80%; */
+    /* } */
+  }
+  sm-card {
+    span[card-title] {
+      background-color: map-get($theme, bg);
+    }
+  }
+
+  .section-header {
+    text-align: center;
+    color: map-get($theme, section-fg);
+    background-color: map-get($theme, section-bg);
+    border: 1px solid map-get($theme, fg);
+    border-left: 0px;
+    border-right: 0px;
+    padding: 0px 15px;
+    margin-bottom: 40px;
+  }
+
+  h2 {
+    font-variant: small-caps;
+    font-weight: 400;
+    letter-spacing: 7px;
+  }
+}
+
+.about-me {
+  margin: 90px auto !important;
+  margin-top: 40px !important;
+}
+
+q {
+  color: map-get($theme, emph);
+}
+
+.experience-block {
+  margin-bottom: 40px;
+}
+#Skills {
+  .skill-block {
+    margin-bottom: 40px;
+  }
+  div[block-content] {
+    margin-bottom: -15px;
+    display: flex;
+    flex-wrap: wrap;
+    .skill {
+      /* flex-grow: 1; */
+      margin: 0px 15px;
+      margin-bottom: 15px;
+      text-align: center;
+      .skill-logo {
+        margin: auto;
+        width:80px;
+        height: 80px;
+        img {
+          max-width: 80px;
+          max-height: 80px;
+        }
+      }
+    }
+  }
+}
+
+#Awards, #Projects {
+  .block {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    .award, .project {
+      width: 300px;
+      @media(max-width: 600) {
+        width: 100px;
+      }
+      flex-grow: 1;
+      div[block-content], div[block-footer] {
+        font-size: 14px;
+      }
+    }
+  }
+}
+
+
+#Contact {
+  ul {
+    list-style-type: square;
+    display: flex;
+    flex-wrap: wrap;
+    li {
+      i {
+        margin-right: 5px;
+      }
+      flex-grow:1;
+      padding-right: 15px;
+      // width: 100px;
+    }
+
+  }
+}
+sm-block {
+  [block-avatar] {
+    max-height: 60px;
+  }
+  .position {
+    color: map-get($theme, special);
+  }
+  h4 {
+    margin-top: 10px;
+    margin-bottom: 0px;
+    font-variant: small-caps;
+  }
+  ul {
+    margin: 0px;
+    font-size: 14px;
+    line-height: 28px;
+    list-style-type: square;
+  }
+}
+
+}
+
+@each $theme in $themes {
+  :host-context(.#{map-get($theme,name)}) {
+    @include style($theme);
+  }
+}

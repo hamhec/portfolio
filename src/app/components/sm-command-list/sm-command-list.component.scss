@@ -1,0 +1,38 @@
+
+@import '../../../theme-variables.scss';
+
+@mixin style($theme) {
+.container {
+  width: 100%;
+  position: absolute;
+  bottom: calc(#{$outputline-height} + #{$powerline-height} );
+  border-top: 1px solid map-get($theme, border);
+  background-color: map-get($theme, bg);
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0px 10px;
+    li {
+      cursor: pointer;
+      width: 300px;
+      list-style: none;
+      .key {
+        color: map-get($theme, keyword);
+      }
+      .leaf {
+        color: map-get($theme, link);
+      }
+      .node {
+        color: map-get($theme, special);
+      }
+    }
+  }
+}
+}
+
+
+@each $theme in $themes {
+  :host-context(.#{map-get($theme,name)}) {
+    @include style($theme);
+  }
+}

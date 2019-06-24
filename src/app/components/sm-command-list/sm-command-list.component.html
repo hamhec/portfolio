@@ -1,0 +1,12 @@
+<div class="container" *ngIf="commands.length > 0">
+  <ul>
+    <li *ngFor="let cmd of commands" (click)="commandService.executeCommand(cmd,true)">
+      <span class="key">{{ cmd.key }}</span>
+      &rarr;
+      <span [ngClass]="{
+        'leaf': cmd.children == undefined,
+        'node': cmd.children != undefined
+        }">{{ cmd.text }}</span>
+    </li>
+  </ul>
+</div>

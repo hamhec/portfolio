@@ -1,0 +1,27 @@
+
+@import '../../../theme-variables.scss';
+
+.container {
+  cursor: pointer;
+  height: $outputline-height;
+  display: flex;
+  font-size: 18px;
+  padding-left: 5px;
+  line-height: 20px;
+  div {
+    overflow:hidden;
+    display:inline-block;
+    text-overflow: ellipsis;
+    white-space: nowrap;  }
+}
+@mixin style($theme) {
+  .container {
+    background-color: map-get($theme, bg);
+  }
+}
+
+@each $theme in $themes {
+  :host-context(.#{map-get($theme,name)}) {
+    @include style($theme);
+  }
+}

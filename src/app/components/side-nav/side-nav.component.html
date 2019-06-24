@@ -1,0 +1,68 @@
+<div class="container">
+  <div class="content">
+    <img id="logo" src="./assets/profile.jpg">
+
+    <h1 class="name">[RAOUF HECHAM]</h1>
+
+    <nav>
+      <ul>
+        <li><a class="nav" [routerLink]="['/']" fragment="Help">
+          <em>[</em><span>?</span>]
+        </a></li>
+        <li><a class="nav" [routerLink]="['/']" fragment="About">
+          <em>[</em><span >About</span>]
+        </a></li>
+        <li><a class="nav" [routerLink]="['/']" fragment="Experience">
+          <em>[</em><span >Experience</span>]
+        </a></li>
+        <li><a class="nav" [routerLink]="['/']" fragment="Skills">
+          <em>[</em><span >Skills</span>]
+        </a></li>
+        <li><a class="nav" [routerLink]="['/']" fragment="Projects">
+          <em>[</em><span >Projects</span>]
+        </a></li>
+        <li><a class="nav" [routerLink]="['/']" fragment="Awards">
+          <em>[</em><span >Awards</span>]
+        </a></li>
+        <li><a class="nav" [routerLink]="['/']" fragment="Education">
+          <em>[</em><span >Education</span>]
+        </a></li>
+        <li><a class="nav" [routerLink]="['/']" fragment="Research">
+          <em>[</em><span >Research</span>]
+        </a></li>
+        <li><a class="nav" [routerLink]="['/']" fragment="Contact">
+          <em>[</em><span>Contact</span>]
+        </a></li>
+        <li><a class="nav special" href="#">
+          <em>[</em><span >Posts</span>]
+        </a></li>
+        <li><a class="nav special" routerLink="/cv">
+          <em>[</em><span>Resume</span>]
+        </a></li>
+      </ul>
+    </nav>
+
+
+    <sm-card id="Help">
+      <span card-title>[ How to Use this Website ]</span>
+      <div card-content>
+        <p>
+          This website is inspired from
+          <a href="http://spacemacs.org" class="nav">
+            <em>[</em><span>Spacemacs</span>]
+          </a>
+          :
+        </p>
+        <ul>
+          <li>Press [SPC] to open options.</li>
+          <li>Press [SPC 1] to focus on this window.</li>
+          <li>Press [k] or [j] to scroll up or down on active window.</li>
+          <li>Press [SPC T n] to change theme.</li>
+          <li>Press [TAB] to go to next link in active window.</li>
+          <li>Press [SHIFT TAB] to go to previous link in active window.</li>
+        </ul>
+      </div>
+    </sm-card>
+  </div>
+
+</div>

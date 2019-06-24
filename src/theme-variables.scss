@@ -1,0 +1,104 @@
+
+$powerline-height: 45px;
+$outputline-height: 25px;
+
+// Theming variables
+
+$material-teal-theme: (
+  name: "material-teal-theme",
+  bg: #fdf6e3,
+  bg2: #eee8d5,
+  bg-image: url(../assets/bg-light.png),
+  fg: #657b83,
+  border: #cccec4, //#1E2229,
+  border2: #cccec4,
+  link: #859900,
+  function: #268bd2,
+  emph: #859900,
+  special: #268bd2,
+  keyword: #268bd2,
+  section-bg: #859900,
+  section-fg: white,
+  pl-number-outer-active: #eead0e,
+  pl-number-circle-active: #eee8d5,
+  pl-number-outer-inactive: #eee8d5,
+  pl-number-circle-inactive: #93a1a1,
+  pl-window-name-active: #eee8d5,
+  pl-window-name-inactive: #fdf6e3,
+  pl-window-scroll-active: #fdf6e3,
+  pl-window-scroll-inactive: #eee8d5,
+  pl-border-color: #cccec4,
+);
+
+$solarized-theme: (
+  name: "solarized-theme",
+  bg: #fdf6e3,
+  bg2: #eee8d5,
+  bg-image: url(../assets/bg-light.png),
+  fg: #657b83,
+  border: #cccec4, //#1E2229,
+  border2: #cccec4,
+  link: #859900,
+  function: #268bd2,
+  emph: #859900,
+  special: #268bd2,
+  keyword: #268bd2,
+  section-bg: #859900,
+  section-fg: white,
+  pl-number-outer-active: #eead0e,
+  pl-number-circle-active: #eee8d5,
+  pl-number-outer-inactive: #eee8d5,
+  pl-number-circle-inactive: #93a1a1,
+  pl-window-name-active: #eee8d5,
+  pl-window-name-inactive: #fdf6e3,
+  pl-window-scroll-active: #fdf6e3,
+  pl-window-scroll-inactive: #eee8d5,
+  pl-border-color: #cccec4,
+  cv-content-fg: rgb(50,50,50),
+  cv-content-bg: white,
+  cv-content-title: #929292,
+  cv-content-special: #377ecb,
+  cv-side-fg: white,
+  cv-side-bg: rgb(45, 62, 80),
+  cv-side-title: white,
+  cv-side-special: #29b6f6
+);
+
+
+$doom-one-theme: (
+  name: "doom-one-theme",
+  bg: #282C34,
+  bg2: #1c1e24,
+  bg-image: url(../assets/bg-dark.png),
+  fg: #BBC2CF,
+  border: #15181E, //#1E2229,
+  border2: #bbc2cf,
+  link: #51afef,
+  function: #c678dd,
+  emph: #51afef,
+  special: #c678dd,
+  keyword: #859900,
+  section-bg: #1c1e24,
+  section-fg: #51afef,
+  pl-number-outer-active: #eead0e,
+  pl-number-circle-active: #1c1e24,
+  pl-number-outer-inactive: #24272c,
+  pl-number-circle-inactive: #5b6268,
+  pl-window-name-active: #1c1e24,
+  pl-window-name-inactive: #1d2026,
+  pl-window-scroll-active: #2d3139,
+  pl-window-scroll-inactive: #24272c,
+  pl-border-color: #24272c00,
+  cv-content-fg: rgb(50,50,50),
+  cv-content-bg: white,
+  cv-content-title: #929292,
+  cv-content-special: #377ecb,
+  cv-side-fg: white,
+  cv-side-bg: rgb(45, 62, 80),
+  cv-side-title: white,
+  cv-side-special: #29b6f6
+);
+
+
+$default : $solarized-theme;
+$themes : $doom-one-theme $solarized-theme $material-teal-theme;

@@ -1,0 +1,16 @@
+<div class="container">
+  <div class="block-header">
+    <div class="avatar">
+      <ng-content select="[block-avatar]"></ng-content>
+    </div>
+    <div class="title">
+      <ng-content select="[block-title]"></ng-content>
+    </div>
+  </div>
+  <div class="block-content">
+    <ng-content select="[block-content]"></ng-content>
+  </div>
+  <div class="block-footer" >
+    <ng-content select="[block-footer]"></ng-content>
+  </div>
+</div>

@@ -1,1 +1,83 @@
 /* You can add global styles to this file, and also import other style files */
+@import "./theme-variables.scss";
+
+html, body { margin: 0; padding: 0 }
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  height: 100vh;
+  font-family: 'Source Code Pro', monospace;
+  font-size: 18px;
+  line-height: 36px;
+}
+
+@mixin style($theme) {
+a {
+  text-decoration: none;
+  outline: none;
+  color: map-get($theme, link);
+
+  &.nav {
+    color:inherit;
+    span {
+      color: map-get($theme, link);
+    }
+    &.special span {
+      color: map-get($theme, special);
+    }
+  }
+}
+
+em {
+  font-weight: 400;
+  text-decoration: none;
+  text-transform: none;
+  font-style: normal;
+  color: map-get($theme, emph);
+}
+
+a:focus em {
+  color: white;
+  background-color: #eead0d ;
+  font-weight: 600;
+}
+a em {
+  color: map-get($theme, fg);
+  font-weight: 600;
+}
+}
+
+
+@include style($default);
+.doom-one-theme {
+  @include style($doom-one-theme);
+}
+
+
+
+@media print {
+
+  #sidenav {
+    display: none !important;
+  }
+  sm-powerline {
+    display: none !important;
+  }
+  sm-outputline {
+    display: none !important;
+  }
+  app-cv #container{
+    margin: 0px !important;
+  }
+  app-cv #download {
+    display: none !important;
+  }
+  .router, html, body {
+    width: 210mm !important;
+    height: 297mm !important;
+  }
+
+}

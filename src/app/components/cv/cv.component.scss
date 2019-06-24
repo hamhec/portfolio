@@ -1,0 +1,182 @@
+
+@import '../../../theme-variables.scss';
+
+@mixin style($theme){
+  @media screen and (max-width: 1100px) {
+    #container {
+      display: none !important;
+    }
+  }
+
+  #download {
+    margin-top: 50px;
+    text-align: center;
+    a {
+      margin: 0px 10px;
+    }
+  }
+#container {
+  font-family: "Open Sans", "Source Code Pro", monospace;
+  width: 210mm;
+  height: 297mm;
+  margin: 50px auto;
+  background-color: map-get($theme, cv-content-bg);
+  display: flex;
+  flex-direction: row;
+  em {
+    /* color: #377ecb; */
+    font-weight: bold;
+    color: inherit;
+  }
+  q {
+    color: map-get($theme, cv-side-special);
+  }
+  #sidebar {
+    width: 66mm;
+    height: 100%;
+    background-color: map-get($theme, cv-side-bg); //map-get($theme, bg);
+    color: map-get($theme, cv-side-fg);
+    text-align: center;
+    padding: 0px 4px;
+    h1 {
+      font-weight: 400;
+      font-size: 30px;
+      line-height: 40px;
+      letter-spacing: 7px;
+      margin-bottom: 0px;
+      font-variant: small-caps;
+      text-transform: uppercase;
+      color: map-get($theme, cv-side-special);
+      span {
+        color: map-get($theme, cv-side-fg);
+      }
+    }
+    h2 {
+      font-weight: 400;
+      font-size: 18px;
+      margin: 5px;
+    }
+    h3 {
+      font-variant: small-caps;
+      margin: 20px 0px 0px 0px;
+      border-bottom: 1px solid map-get($theme, cv-side-fg);
+    }
+    #info {
+      font-size: 14px;
+      margin: 0px 20px;
+      text-align: left;
+      .info {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        i {
+          margin-right: 10px;
+        }
+      }
+    }
+    .content {
+      display: flex;
+      flex-direction: column;
+      & > div {
+        flex-grow: 1;
+      }
+    }
+    .block-content {
+      font-size: 14px;
+      line-height: 25px;
+      text-align: justify;
+      &.skills div {
+        display: inline-block;
+        border-radius: 5px;
+        border: 1px solid map-get($theme, cv-side-fg);
+        padding: 0px 5px;
+        margin: 5px;
+      }
+      ul {
+        padding-left: 20px;
+        list-style-type: square;
+      }
+    }
+  }
+  #content {
+    flex-grow:1;
+    height: 100%;
+    color: map-get($theme, cv-content-fg);
+    padding: 10px;
+    padding-right: 20px;
+    font-size: 14px;
+    line-height: 25px;
+    text-align: justify;
+    h3 {
+      font-variant: small-caps;
+      border-bottom: 1px solid map-get($theme, cv-content-title);
+      margin-bottom: 0px;
+      color: map-get($theme, cv-content-title);
+    }
+    .block-content {
+      font-size:12px;
+      margin-bottom: 20px;
+    }
+    .title {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      div {
+        color: map-get($theme, cv-content-fg);
+        font-size: 11px;
+        margin: 10px 0px 5px 0px;
+      }
+    }
+    h4 {
+      flex-grow: 1;
+      margin: 10px 0px 5px 0px;
+      font-size: 14px;
+      color: map-get($theme, cv-content-special);
+
+    }
+    .location-and-time {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      font-size: 12px;
+      h5 {
+        flex-grow: 1;
+        margin: 0px;
+        font-size: 12px;
+      }
+      .time {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin: 0px 5px;
+      }
+      .location {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin: 0px 5px;
+      }
+    }
+    ul {
+      margin-top: 0px;
+      list-style-type: square;
+      padding-left: 20px;
+    }
+  }
+}
+}
+
+
+@each $theme in $themes {
+  :host-context(.#{map-get($theme,name)}) {
+    @include style($theme);
+  }
+}
+
+
+@media print {
+  #containter {
+    display: none;
+    margin: 0px;
+  }
+}

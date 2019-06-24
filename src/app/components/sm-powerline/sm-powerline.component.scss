@@ -1,0 +1,77 @@
+
+@import '../../../theme-variables.scss';
+
+@mixin style($theme) {
+.container {
+  height: calc(#{$powerline-height} - 2px);
+  display: flex;
+  text-align: center;
+  border: 1px solid map-get($theme, pl-border-color);
+  border-width: 1px 0px;
+  .window-number {
+    width: calc(10px + #{$powerline-height});
+    background-color: map-get($theme,
+                              pl-number-outer-inactive);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    div {
+      border-radius: 50%;
+      color: map-get($theme,
+                     pl-number-outer-inactive);
+      background-color: map-get($theme,
+                                pl-number-circle-inactive);
+      height: 20px;
+      width: 20px;
+      font-size: 16px;
+      line-height: 20px;
+    }
+  }
+
+  .window-name {
+    flex-grow: 1;
+    background-color: map-get($theme,
+                              pl-window-name-inactive);
+    line-height: $powerline-height;
+    font-weight: 600;
+  }
+  .window-scroll {
+    width: 80px;
+    background-color: map-get($theme,
+                              pl-window-scroll-inactive);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.container.isActive {
+
+  .window-number {
+    background-color: map-get($theme,
+                              pl-number-outer-active);
+    div {
+      color: map-get($theme,
+                     pl-number-outer-active);
+      background-color: map-get($theme,
+                                pl-number-circle-active);
+    }
+  }
+
+  .window-name {
+    background-color: map-get($theme,
+                              pl-window-name-active);
+  }
+
+  .window-scroll {
+    background-color: map-get($theme,
+                              pl-window-scroll-active);
+  }
+}
+}
+
+@each $theme in $themes {
+  :host-context(.#{map-get($theme,name)}) {
+    @include style($theme);
+  }
+}
