@@ -133,8 +133,17 @@ export class CommandService {
               execute: function(obj) {
                 obj.focusedWindow = 2;
                 obj.focusSidenav = false;
-                console.log(obj.router);
                 obj.router.navigate(['/'], {fragment: "Contact"});
+              }
+            },
+            {
+              key: 'R',
+              text: 'go-to-resume',
+              textAfterExecute: "Go to 'Resume' section",
+              execute: function(obj) {
+                obj.focusedWindow = 2;
+                obj.focusSidenav = false;
+                obj.router.navigate(['/cv']);
               }
             }
           ]
