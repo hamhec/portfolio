@@ -37,6 +37,7 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
     this.representation.router = router;
 
     this.subscriptions.push(this.route.fragment.subscribe(fragment => {
+      if(!fragment) return;
       try {
         document.querySelector('#' + fragment).scrollIntoView();
       } catch (e) {
@@ -109,7 +110,7 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
   }
 
   scrollWindow(up:boolean = false) {
-    let scrollIncrement = (up)? -100 : 100;
+    let scrollIncrement = (up)? -50 : 50;
     let element = (this.representation.focusedWindow == 1) ? this.window1.nativeElement:
       this.window2.nativeElement;
     let currentScroll = element.scrollTop + scrollIncrement;

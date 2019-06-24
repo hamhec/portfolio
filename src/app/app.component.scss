@@ -18,7 +18,7 @@
       .router {
         height: calc(100vh - #{$powerline-height} - #{$outputline-height});
         overflow-y: scroll;
-        scroll-behavior: smooth;
+        scroll-behavior: auto;
         scrollbar-width: none; /* Firefox */
         -ms-overflow-style: none;  /* IE 10+ */
         &::-webkit-scrollbar { /* WebKit */
@@ -43,7 +43,7 @@
         width: 310px;
         text-align: center;
         overflow-y: scroll;
-        scroll-behavior: smooth;
+        scroll-behavior: auto;
         scrollbar-width: none; /* Firefox */
         -ms-overflow-style: none;  /* IE 10+ */
         &::-webkit-scrollbar { /* WebKit */
