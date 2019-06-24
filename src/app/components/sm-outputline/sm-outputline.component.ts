@@ -9,7 +9,7 @@ import { Subscription } from 'rxjs';
   styleUrls: ['./sm-outputline.component.scss']
 })
 export class SmOutputlineComponent implements OnInit, OnDestroy {
-  private message:string = '';
+  message:string = '';
   private subscriptions:Subscription[] = [];
 
   constructor(private commandService:CommandService) { }

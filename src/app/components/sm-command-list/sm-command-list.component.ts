@@ -11,7 +11,7 @@ import { Command } from '../../models';
 })
 export class SmCommandListComponent implements OnInit, OnDestroy {
   private subscriptions:Subscription[] = [];
-  private commands:Command[];
+  commands:Command[];
 
   constructor(private commandService:CommandService) { }
 
