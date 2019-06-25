@@ -143,7 +143,7 @@ export class CommandService {
               execute: function(obj) {
                 obj.focusedWindow = 2;
                 obj.focusSidenav = false;
-                obj.router.navigate(['/cv', {fragment: "download"}]);
+                obj.router.navigate(['/cv'], {fragment: "download"});
               }
             }
           ]
