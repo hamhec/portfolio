@@ -37,8 +37,19 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
     this.representation.router = router;
 
     this.subscriptions.push(this.route.fragment.subscribe(fragment => {
-      if(!fragment) return;
+      if(!fragment) {
+        this.representation.focusedWindow= 2;
+        this.representation.focusSidenav = false;
+        return;
+      }
       try {
+        if(fragment == "Help") {
+          this.representation.focusedWindow= 1;
+          this.representation.focusSidenav = true;
+        } else {
+          this.representation.focusedWindow= 2;
+          this.representation.focusSidenav = false;
+        }
         document.querySelector('#' + fragment).scrollIntoView();
       } catch (e) {
         setTimeout(() => {

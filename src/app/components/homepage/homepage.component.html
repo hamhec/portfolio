@@ -11,7 +11,7 @@
         <span card-title>[ About Me ]</span>
         <div card-content>
           <p>
-            <em>tl;dr:</em> I am a Fullstack Developer with a
+            I am a <em>Fullstack Developer</em> with a
             Ph.D. in Artificial Intelligence.
           </p>
           <p>
@@ -26,12 +26,15 @@
           <p>
             My philosophy in life is simple:
             <q>Find the pattern; Optimize it.</q>
-            Head over to my
-            <a href="/posts" class="nav special">
-              <em>[</em><span>Posts</span>]
-            </a>
-            section to see how I optimize my life as a
-            developer.
+            Check the <a class="nav" [routerLink]="['/']" fragment="Help">
+              <em>[</em><span>Help</span>]
+            </a> section for information on how to use this website.
+            <!-- Head over to my -->
+            <!-- <a href="/posts" class="nav special"> -->
+            <!-- <em>[</em><span>Help</span>] -->
+            <!-- </a> -->
+            <!-- section to see how I optimize my life as a -->
+            <!-- developer. -->
           </p>
         </div>
       </sm-card>
@@ -402,7 +405,7 @@
             <h4 style="margin:0px">Languages</h4>
             <ul>
               <li>English (C2): Full professional proficiency</li>
-              <li>French (C2): Bilingual <a href="#" class="nav"><em>[</em><span>DALF</span>]</a></li>
+              <li>French (C2): Bilingual <a href="./assets/documents/DALF_C1.pdf" download="dalf_c1.pdf" class="nav"><em>[</em><span>DALF</span>]</a></li>
               <li>Arab: Native</li>
             </ul>
           </div>
@@ -531,7 +534,7 @@
         <sm-block>
           <img block-avatar src="./assets/dalf.png">
           <div block-title>
-            <a href="#" class="nav">
+            <a href="./assets/documents/DALF_C1.pdf" download="dalf_c1.pdf" class="nav">
               <em>[</em><span>Advanced French Language Diploma - C1</span>]
             </a>
           </div>
@@ -612,8 +615,10 @@
           <h4>Documents</h4>
           <ul>
             <li>
-              Thesis: <a href="#" class="nav "><em>[</em><span>Defeasible Reasoning Using
-          Existential Rules</span>]</a>.
+              Thesis:
+              <a href="./assets/documents/phd.pdf" download="phd.pdf"
+          class="nav "><em>[</em><span>Defeasible Reasoning Using Existential
+          Rules</span>]</a>.
             </li>
           </ul>
         </div>
