@@ -116,6 +116,8 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
   }
 
   ngAfterViewInit() {
+    // scroll to bottom of body for mobile devices;
+    window.scrollTo(0,document.body.scrollHeight);
     let e = document.querySelector("#main-content") as HTMLElement;
     e.focus();
   }
