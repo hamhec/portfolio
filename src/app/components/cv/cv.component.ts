@@ -145,12 +145,12 @@ export class CvComponent implements OnInit {
         place: "IUT de Montpellier",
         time: "Oct 15 - Jul 19",
         location: "Montpellier | France",
-        description: "Tutorat et cours magistraux (+300h) pour les étudiants de premier cycle.",
+        description: "Tutorat et cours magistraux (+300h) pour les étudiants de premier cycle en Informatique.",
         items: [
           "Intoduction aux bases de données (92h).",
           "Interaction Homme-Machine (173h).",
           "Développement Web (24h).",
-          "Tutorat: 5 groupes d'etudiants en licence."
+          "Tutorat: 5 groupes d'étudiants en licence."
         ]
       },
 
@@ -178,24 +178,26 @@ export class CvComponent implements OnInit {
         description: "Raisonnement avec des connaissances conflictuelles dans divers domaines: bases de données, qualité des données, web sémantique, argumentation et raisonnement humain.",
       },
       {
-        position: "Master en Informatique",
+        position: "Master en Informatique - Technologies Web",
         more: "Rang: 1/76",
         place: "Université Abdelhamid Mehri",
         time: "Sep 13 - Jul 15",
         location: "Constantine | Algérie",
-        description: "Implémentation d'un outil de classification d'individus dans des ontologies floues en calculant le degré d'appartenance et en affichant les résultats dans un graphe orienté."
+        description: "Implémentation d'un outil Java/D3 de classification d'individus dans des ontologies floues en calculant le degré d'appartenance et en affichant les résultats dans un graphe orienté."
       }]
     },
 
     awards: {
       title: "Certifications et Prix",
       aws: [
+        {title:"Agile Meets Design Thinking:",
+         desc: "certification Agile - Coursera."},
         {title:"Bourse Doctorat d'Excellence:",
          desc: "pour les étudiants avec un parcours exceptionnel."},
         {title:"DALF C1:",
          desc: "Diplôme Approfondi de Langue Française - C1."},
-        {title:"Major de promotion:",
-         desc: "en Licence et Master."},
+        // {title:"Major de promotion:",
+        //  desc: "en Licence et Master."},
 
         {title:"Cirta-Science-III Astronomy Award:",
          desc: "première place au concours d'astronomie."}

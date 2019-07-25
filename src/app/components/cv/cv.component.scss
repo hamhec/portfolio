@@ -176,6 +176,7 @@
 
 @media print {
   #containter {
+    -webkit-print-color-adjust:exact;
     display: none;
     margin: 0px;
   }
