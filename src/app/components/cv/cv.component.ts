@@ -123,7 +123,7 @@ export class CvComponent implements OnInit {
       title: "Philosophie de Vie",
       beforeQuote: "Ma philosophie de vie est: ",
       quote: "Find the pattern; Optimize it.",
-      afterQuote: "J'aime utiliser mon attention au détail pour optimiser et faciliter la résolution de problèmes complexes."
+      afterQuote: "J'aime utiliser mon attention aux détails pour optimiser et faciliter la résolution de problèmes complexes."
     },
     experience: {
       title: "Expérience",
