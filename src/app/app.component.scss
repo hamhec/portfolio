@@ -16,7 +16,7 @@
         outline: none;
       }
       .router {
-        height: calc(100vh - #{$powerline-height} - #{$outputline-height});
+        height: calc(#{$screen-height} - #{$powerline-height} - #{$outputline-height});
         overflow-y: scroll;
         scroll-behavior: auto;
         scrollbar-width: none; /* Firefox */
@@ -50,7 +50,7 @@
           width: 0;
           height: 0;
         }
-        height: calc(100vh - #{$powerline-height} - #{$outputline-height} - 0px);
+        height: calc(#{$screen-height} - #{$powerline-height} - #{$outputline-height} - 0px);
       }
 
     }

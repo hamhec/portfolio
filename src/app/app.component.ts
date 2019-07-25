@@ -117,9 +117,16 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
 
   ngAfterViewInit() {
     // scroll to bottom of body for mobile devices;
-    window.scrollTo(0,document.body.scrollHeight);
-    let e = document.querySelector("#main-content") as HTMLElement;
-    e.focus();
+    // window.scrollTo(0,document.body.scrollHeight);
+    // let e = document.querySelector("#main-content") as HTMLElement;
+    // e.focus();
+
+    // set the available height of screen in case of smartphone
+    window.addEventListener('resize', () => {
+      // We execute the same script as before
+      let vh = window.innerHeight * 0.01;
+      document.documentElement.style.setProperty('--vh', `${vh}px`);
+    });
   }
 
   scrollWindow(up:boolean = false) {
